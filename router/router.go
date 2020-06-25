@@ -9,6 +9,8 @@ import (
 func init() {
 	s := g.Server()
 	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.ALL("/", hello.Hello)
+		group.ALL("/create", hello.CreateBucket)
+		group.ALL("/",hello.GetToken)
+		group.ALL("/remove",hello.RemoveBucket)
 	})
 }
